@@ -181,7 +181,7 @@ splitted_all_df = np.array_split(all_dfs, 10)
 
 if not os.path.exists('./merged_outputs'):
     os.mkdir('./merged_outputs')
-    
+
 last_split_idx = 0
 
 for i in range(last_split_idx, 10):
@@ -194,4 +194,4 @@ for i in range(last_split_idx, 10):
     print(f"row count with nan after processed: {(df.isna().any(axis=1)).sum()}")
     df = df.dropna()
     print(f"all dataset shape after processed: {df.shape}")
-    df.to_csv(f"./outputs/all_final_outputs_{i}.csv", encoding='utf-8', index=False)
+    df.to_csv(f"./merged_outputs/all_final_outputs_{i}.csv", encoding='utf-8', index=False)
