@@ -179,7 +179,11 @@ print(all_dfs.shape)
 # split dataframe of size 296597 to 10 splits
 splitted_all_df = np.array_split(all_dfs, 10)
 
+if not os.path.exists('./merged_outputs'):
+    os.mkdir('./merged_outputs')
+    
 last_split_idx = 0
+
 for i in range(last_split_idx, 10):
     df = splitted_all_df[i].copy()
     print(f"original all dataset shape: {df.shape}")
